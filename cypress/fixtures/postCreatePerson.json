@@ -1,0 +1,20 @@
+{
+  "personTypeCode": "L",
+  "name": "New company Ltd",
+  "identificationNumbers": [
+    {
+      "idNumber": "111111",
+      "idCountryCode": "GB",
+      "primary": true
+    }
+  ],
+  "addresses": [
+    {
+      "addressTypeCode": "R",
+      "countryCode": "GB",
+      "cityCounty": "London",
+      "street1": "Carnaby 10",
+      "zip": "13347"
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+    "accountTypeCode": "CURRENCY",
+    "masterAccountId": "ID-1000",
+    "overdraftAmount": {
+      "amount": 1.22,
+      "currencyCode": "EUR"
+    },
+    "accountName": "My business account",
+    "personName": "Peter Alexander Schmidt",
+    "source": {
+      "sourceName": "string",
+      "sourceRef": "string",
+      "sourceLink": "string"
+    },
+    "residencyCountryCode": "DE",
+    "customerGroupCode": "GOLD",
+    "priceListTypeCode": "PREMIUM",
+    "currencyCode": "EUR",
+    "accountInterestRate": 10,
+    "personTypeCode": "P",
+    "intraOrgCode": "string",
+    "representatives": [
+      {
+        "personId": "ID-1001",
+        "accountRightCode": "ALL",
+        "limits": [
+          {
+            "amount": {
+              "amount": 1.22,
+              "currencyCode": "EUR"
+            },
+            "accountLimitTypeCode": "DAILY"
+          }
+        ]
+      }
+    ],
+    "accountTypeSetupCode": "EXTERNAL_VIRTUAL",
+    "serviceProviderCode": "TUUM",
+    "accountNumbers": [
+      {
+        "accountNumber": {
+          "type": "IBAN",
+          "value": "EE711266266878335196"
+        },
+        "countryCode": "EE",
+        "financialInstitutionId": {
+          "type": "BIC",
+          "value": "123456"
+        },
+        "defaultCurrencyCode": "EUR"
+      }
+    ],
+    "customFields": {
+      "fieldId1": "Example value",
+      "fieldId2": "Example value"
+    },
+    "limits": [
+      {
+        "amount": {
+          "amount": 1.22,
+          "currencyCode": "EUR"
+        },
+        "accountLimitTypeCode": "DAILY"
+      }
+    ],
+    "interestMethodAssignmentCode": "EXTRA15",
+    "accountClassCode": "SAFEGUARDED",
+    "taxResidencyCountryCode": "DE",
+    "jurisdictionCountryCode": "ES",
+    "accessRestricted": false,
+    "numberingSequenceKey": "PERSON_DDA_ACCOUNT",
+    "bicKey": "RETAIL"
+}
