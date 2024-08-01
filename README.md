@@ -20,34 +20,36 @@ In this project, cypress was used to write automated tests for some of tuum's en
    ```bash
    $npm install
    ```
-3. Create a /cypress.env.json file and add all your environment variables that would be used to run the test at the root of the project. the variables I used includes:
+4. Create a /cypress.env.json file and add all your environment variables that would be used to run the test at the root of the project. the variables I used includes:
     ```bash
     "x-request-id":"<X-REQUEST-ID>", //gotten from swagger example account-api endpoint
     "accountId":"<ACCOUNTID>", //generated after calling create account endpoint
     "personId":"<PERSONID>", //Generated after calling create person endpoint
     "token":"<TOKEN>" //Generated after calling auth endpoint
     ```
-4. After all the project dependencies are installed, run cypress tests using the following command
+5. After all the project dependencies are installed, run cypress tests using the following command
     ```bash
    $npm run test 
    to run test with browser popup use:
    $npm run test:headed
    ```
-5. After tests are done running 2 folders with reports of test results will be created in the root directory. One called /screenshots that contains all results files in images format and the /reports folder that contains reports in .html format that can be loaded in a browser. To load the results, open the index.html file located at this path cypress/reports/index.html
+6. After tests are done running 2 folders with reports of test results will be created in the root directory. One called /screenshots that contains all results files in images format and the /reports folder that contains reports in .html format that can be loaded in a browser. To load the results, open the index.html file located at this path cypress/reports/index.html
 
 ## Setup and run tests using Docker
 1. After cloning this repository, [install docker](https://docs.docker.com/engine/install/) to your pc following the instructions provided in the link. Make sure the docker application for desktop is up and running.
 
-2. Navigate to the root of the project where the docker file is located and build the docker image
+2. The docker image used as a base was a version of the [cypress/include](https://hub.docker.com/r/cypress/included/tags) image as recommended on the official [cypress github page](https://github.com/cypress-io/cypress-docker-images)
+
+3. Navigate to the root of the project where the docker file is located and build the docker image
 ```bash
    $cd cypress-api-testing
    //Open Docker application
    $open /Applications/Docker.app
    //Build docker image with this command
-   $docker build -t my-cypress-image:1.0.0
+   $docker build -t my-cypress-image:1.0.0 .
    //Run the cypress test in the docker image using the following command which also prints test results to your project folder
    $docker run -i -v $PWD:/cypress-project -t my-cypress-image:1.0.0 (linux on a macbook)
-   $docker run -i -v "%cd%":/cypress-project -t my-cypress-image:1.0.0 . (on windows)
+   $docker run -i -v "%cd%":/cypress-project -t my-cypress-image:1.0.0 (on windows)
    ```
 
 # Test Plan and strategy for Tuum endpoints
@@ -119,5 +121,5 @@ Below is a mind map of how this test was designed and how I imagined the endpoin
 - I could not get a 200 response on the create person response which was supposed to generate a personID and set it to a cypressEnv variable which I would then need for the create account endpoint
 - This lead to a ripple effect of not being able to get any 200 response from the rest of the endpoints
 - An accountid is also required to make a request to the get balances api endpoint. Using the accounted ID-2000, as seen in the sample request in swagger, still returned a 404 not found status
-- The create transactions endpoint https://account-api.sandbox.tuumplatform.com/swagger-ui/index.html#/account-api/create
+- The create transactions endpoint https://account-api.sandbox.tuumplatform.com/swagger-ui/index.html#/account-transaction-api/createTransactionV4
  AccountV4 has been deprecated so I used the endpoint referenced under the deprecated endpoint: https://account-api.sandbox.tuumplatform.com/swagger-ui/index.html#/account-transaction-api/createTransactionV5
