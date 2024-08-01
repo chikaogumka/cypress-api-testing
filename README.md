@@ -51,6 +51,11 @@ In this project, cypress was used to write automated tests for some of tuum's en
    $docker run -i -v $PWD:/cypress-project -t my-cypress-image:1.0.0 (linux on a macbook)
    $docker run -i -v "%cd%":/cypress-project -t my-cypress-image:1.0.0 (on windows)
    ```
+## Setup and run tests using Postman
+1. Download the chika-ogumka-tuum-assignment.postman_collection.json file attached to the email
+2. Import the collection into postman
+3. Run the collection in this order:
+ ![Alt text](images/postman-run-order.png)
 
 # Test Plan and strategy for Tuum endpoints
 
