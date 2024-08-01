@@ -17,10 +17,16 @@ In this project, cypress was used to write automated tests for some of tuum's en
    cd cypress-api-testing
    ```
 3. Install all project dependencies:
-
    ```bash
    $npm install
    ```
+3. Create a /cypress.env.json file and add all your environment variables that would be used to run the test at the root of the project. the variables I used includes:
+    ```bash
+    "x-request-id":"<X-REQUEST-ID>", //gotten from swagger example account-api endpoint
+    "accountId":"<ACCOUNTID>", //generated after calling create account endpoint
+    "personId":"<PERSONID>", //Generated after calling create person endpoint
+    "token":"<TOKEN>" //Generated after calling auth endpoint
+    ```
 4. After all the project dependencies are installed, run cypress tests using the following command
     ```bash
    $npm run test 
