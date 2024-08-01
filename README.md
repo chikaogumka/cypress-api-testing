@@ -41,7 +41,7 @@ In this project, cypress was used to write automated tests for some of tuum's en
    $docker build -t my-cypress-image:1.0.0
    //Run the cypress test in the docker image using the following command which also prints test results to your project folder
    $docker run -i -v $PWD:/cypress-project -t my-cypress-image:1.0.0 (linux on a macbook)
-   $docker run -i -v "%cd%":/cypress-project -t my-cypress-image:1.0.0 (on windows)
+   $docker run -i -v "%cd%":/cypress-project -t my-cypress-image:1.0.0 . (on windows)
    ```
 
 # Test Plan and strategy for Tuum endpoints
