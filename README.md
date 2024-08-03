@@ -78,7 +78,6 @@ The following endpoints were tested in this project:
 2. Create Test cases
     - Test case for each endpoint
     - Include both positive and negative test case
-3. Create test cases
 4. Run tests and gather test results
 
 ### Test cases for endpoints
